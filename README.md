@@ -1,4 +1,37 @@
-Go to folder where mp4 files are downloaded.
+Step 1: Install the Advanced Scene Switcher Plugin
+Download the Advanced Scene Switcher plugin from [here.](https://obsproject.com/forum/resources/advanced-scene-switcher.395/)
+Install the plugin following the instructions provided on the page.
+
+Step 2: Configure the Scene Switcher to Trigger on Stream Stop
+Open OBS Studio.
+Go to Tools > Advanced Scene Switcher.
+In the Advanced Scene Switcher window, go to the "Macro" tab.
+Click Add to create a new macro.
+
+Step 3: Set Up the Macro to Run Your Python Script
+Name your macro (e.g., "Run Python Script to Organize on Stream Stop").
+
+Add Condition:
+
+Click Add under Conditions.
+Select Streaming > Streaming State and set it to Stopped.
+This condition tells OBS to trigger the macro only when streaming stops.
+
+Add Action:
+
+Click Add under Actions.
+Choose Run program.
+In the program path, point to your Python executable (e.g., C:\path\to\python.exe).
+**NOTE** **You have to have python downloaded**
+In the Arguments field, specify the path to your script (e.g., C:\path\to\your_script.py).
+Download my "sortmp4.py" file and copy the path to it.
+
+Save the macro configuration, and close the Advanced Scene Switcher settings.
+
+
+
+
+This is how it works once stream is closed
 ![Screenshot 2024-10-29 112319](https://github.com/user-attachments/assets/5fe60714-8deb-41b8-b518-d98ae3ee7c1a)
 
 Copy folder path to mp4 files
