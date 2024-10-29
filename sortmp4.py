@@ -18,7 +18,8 @@ def move_matching_files(source_folder, destination_folder, *strings):
                     # Create the destination folder if it doesn't exist
                     if not os.path.isdir(destination_folder):
                         os.makedirs(destination_folder, exist_ok=True)
-                    
+                    destination_folder = os.path.join(source_folder, string)
+                    os.makedirs(destination_folder, exist_ok=True)
                     
                     # Move the file to the destination folder
                     source_path = os.path.join(source_folder, filename)
