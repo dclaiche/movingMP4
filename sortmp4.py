@@ -2,8 +2,16 @@ import os
 import shutil
 import sys
 
-def move_matching_files(source_folder, destination_folder, *strings):
-    # Ensure the source folder exists
+def move_matching_files():
+    # Here put your path of the source folder (where all the mp4 files are first downloaded)
+    # replace C:\coding\test2 with the path of the folder where the mp4 files are first downloaded
+    source_folder = r"C:\coding\test2"
+    # Here put your path of the destination folder (where you want to move the mp4 files)
+    # replace C:\coding\test2 with the path of the folder where you want to move the mp4 files
+    destination_folder = r"C:\coding\test2"
+    # Here put the strings you want to search for in the filename and match. Note that the strings will create a new folder AND look for files with that specfic string in the filename.
+    strings = ["duck", "cat"]
+
     if not os.path.isdir(source_folder):
         print(f"The folder '{source_folder}' does not exist.")
         return
@@ -30,11 +38,5 @@ def move_matching_files(source_folder, destination_folder, *strings):
                     break  # Move on to the next file once a match is found
 
 if __name__ == "__main__":
-    # First argument is the source folder, remaining arguments are the strings to search for
-    if len(sys.argv) < 4:
-        print("Usage: python move_files.py <source_folder> <destination_folder> <string1> <string2> ...")
-    else:
-        source_folder = sys.argv[1]
-        destination_folder = sys.argv[2]
-        strings = sys.argv[3:]
-        move_matching_files(source_folder, destination_folder, *strings)
+    # First argument is the source folder, remaining arguments are the strings to search fo
+    move_matching_files()
